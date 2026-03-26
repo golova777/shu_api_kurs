@@ -1,0 +1,43 @@
+[project]
+name = "shu-api-kurs"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.11"
+dependencies = [
+    "annotated-types>=0.7.0",
+    "anyio>=4.13.0",
+    "beautifulsoup4>=4.14.3",
+    "certifi>=2026.2.25",
+    "click>=8.3.1",
+    "dnspython>=2.8.0",
+    "email-validator>=2.3.0",
+    "fake-useragent>=2.2.0",
+    "fastapi-cli>=0.0.24",
+    "fastapi[standard]>=0.135.2",
+    "h11>=0.16.0",
+    "httpcore>=1.0.9",
+    "httptools>=0.7.1",
+    "httpx>=0.28.1",
+    "idna>=3.11",
+    "ipykernel>=7.2.0",
+    "jinja2>=3.1.6",
+    "markdown-it-py>=4.0.0",
+    "markupsafe>=3.0.3",
+    "mdurl>=0.1.2",
+    "memory-profiler>=0.61.0",
+    "objgraph>=3.6.2",
+    "pydantic>=2.12.5",
+    "pydantic-core>=2.41.5",
+    "pygments>=2.19.2",
+    "python-dotenv>=1.2.2",
+    "python-multipart>=0.0.22",
+    "pyyaml>=6.0.3",
+    "requests>=2.33.0",
+    "rich>=14.3.3",
+    "shellingham>=1.5.4",
+    "sniffio>=1.3.1",
+    "starlette>=1.0.0",
+    "typer>=0.24.1",
+    "typing-extensions>=4.15.0",
+    "uvicorn>=0.42.0",
+]
