@@ -6,6 +6,10 @@ from fastapi.params import Body
 
 from support import select_hotel_by_signature
 
+import time
+import asyncio
+import threading
+
 app = FastAPI()
 
 hotels = [
@@ -14,15 +18,41 @@ hotels = [
 ]
 
 
+@app.get('/sync/{id}')
+def sync_func(id: int):
+    print("\n\n")
+    print(f"sync: потоков {threading.active_count()}")
+    print(f'sync начал {id}: {time.time():.2f}')
+    time.sleep(3)
+    print(f'sync закончил {id}: {time.time():.2f}')
+    return {"sync slept for id": id}
 
 
 
-@app.get('/')
+@app.get('/async/{id}')
+async def async_func(id: int):
+    print("\n\n")
+    print(f"async: потоков {threading.active_count()}")
+    print(f'async начал {id}: {time.time():.2f}')
+    await asyncio.sleep(3)
+    print(f'async закончил {id}: {time.time():.2f}')
+    return {"async slept for id": id}
+
+
+
+
+
+
+@app.get('/', summary="просто стартовая", description="описание сложной бизнес логиги")
 def func():
     return {'hello': 'world!!!fffff'}
 
 
-@app.post('/hotels')
+@app.post(
+    '/hotels',
+    summary="получение списка отелей",
+    description="описание сложной бизнес логиги",
+)
 def create_hotel(
         title: str = Body(embed=True)
 ):
@@ -111,4 +141,4 @@ def patch_hotel(
 
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", reload=True)
+    uvicorn.run("main:app", reload=False)

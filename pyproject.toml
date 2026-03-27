@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
+    "aiohttp>=3.13.3",
     "annotated-types>=0.7.0",
     "anyio>=4.13.0",
     "beautifulsoup4>=4.14.3",
