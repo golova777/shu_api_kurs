@@ -40,4 +40,5 @@ dependencies = [
     "typer>=0.24.1",
     "typing-extensions>=4.15.0",
     "uvicorn>=0.42.0",
+    "uvloop>=0.22.1",
 ]
