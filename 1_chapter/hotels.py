@@ -103,6 +103,7 @@ def get_hotels(
         page = DEFAULT_PAGE
 
     hotels_ = []
+    # сначала филтруем список отелей
     for hotel in hotels:
         if hotel_id and hotel['id'] != hotel_id:
             continue
@@ -114,7 +115,7 @@ def get_hotels(
     if len(hotels_) == 1:
         return hotels_
     else:
-        # пагинация
+        # пагинация делается уже на отфильтрованом списке
         start_pos = (page - 1) * per_page
         end_pos = start_pos + per_page
 
