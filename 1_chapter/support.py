@@ -1,6 +1,24 @@
 from typing import Dict, List
 
 
+def get_last_page(all_entries_len: int, per_page: int):
+    DEFAULT_LAST_PAGE: int = 1
+    ostatok = all_entries_len % per_page
+
+    if type(all_entries_len) is not int:
+        return DEFAULT_LAST_PAGE
+    if type(per_page) is not int:
+        return DEFAULT_LAST_PAGE
+    if not all_entries_len or not per_page:
+        return DEFAULT_LAST_PAGE
+    if all_entries_len < per_page:
+        return DEFAULT_LAST_PAGE
+
+    if ostatok == 0:
+        return all_entries_len // per_page
+    else:
+        return all_entries_len // per_page + 1
+
 
 def next_hotel_id(hotels: list) -> int:
     # выдаёт следующий свободгный id для нового отеля
